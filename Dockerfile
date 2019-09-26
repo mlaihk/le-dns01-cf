@@ -1,11 +1,7 @@
-FROM python:slim-buster
+FROM analogj/lexicon:latest
 LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
 
-RUN apk add --update openssl curl bash inotify-tools git \
- && rm -rf /var/cache/apk/*
-
-RUN pip install \
-      dns-lexicon
+RUN pip install dns-lexicon
 
 VOLUME ["/letsencrypt"]
 RUN mkdir /dns
