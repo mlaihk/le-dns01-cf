@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+WELLKNOWN=/letsencrypt
+BASEDIR=/letsencrypt
+CONTACT_EMAIL=$EMAIL
+KEY_ALGO=${ALGO:-rsa}
+
+if [ -z ${STAGING+-} ]; then
+  CA="https://acme-v02.api.letsencrypt.org/directory"
+else
+  CA="https://acme-staging.api.letsencrypt.org/directory"
+fi
