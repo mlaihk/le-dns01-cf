@@ -1,7 +1,9 @@
 FROM python:slim-buster
 LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
 
- 
+RUN apt-get update && \
+	apt-get -y install curl inotify-tools && \
+	rm -rf /var/lib/apt/lists/*  
 RUN pip install dns-lexicon
 
 VOLUME ["/letsencrypt"]
