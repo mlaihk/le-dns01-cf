@@ -12,6 +12,11 @@ ADD https://raw.githubusercontent.com/AnalogJ/lexicon/master/examples/dehydrated
 ADD https://raw.githubusercontent.com/lukas2511/dehydrated/master/dehydrated  ./dehydrated
 COPY run.sh config /
 RUN chmod +x /dns/hook /run.sh ./dehydrated
+ENV EMAIL you@email.com
+ENV PROVIDER cloudflare
+ENV LEXICON_CLOUDFLARE_USERNAME youcf@email.com
+ENV LEXICON_CLOUDFLARE_TOKEN asdasdfasdfasfasfasfasf
 
 ENTRYPOINT ["/bin/bash"]
+CMD ["./run.sh"]
 
