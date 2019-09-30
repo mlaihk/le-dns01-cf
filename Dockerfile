@@ -1,4 +1,4 @@
-FROM python:slim
+FROM python:slim-buster
 LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
 
 RUN apt-get update && \
